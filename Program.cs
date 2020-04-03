@@ -17,18 +17,24 @@ namespace Test
             Console.Write("Author:"); string Author = Console.ReadLine();
             Console.Write("Title:"); string Title = Console.ReadLine();
             Console.Write("Content:"); string Content = Console.ReadLine();
-            Book NewBook = new Book
+            Title NewTitle = new Title
             {
-                Author = Author,
-                Title = Title,
-                Content = Content
+               TextTitle=Title
+            };
+            Author NewAuthor = new Author
+            {
+               TextAuthor=Author
+            };
+            Content NewContent = new Content
+            {
+               TextContent=Content
             };
             Console.ForegroundColor = ConsoleColor.Blue;
-            Book.Show(Author);
+            Book.Show(NewTitle.TextTitle);
             Console.ForegroundColor = ConsoleColor.Red;
-            Book.Show(Title);
+            Book.Show(NewAuthor.TextAuthor);
             Console.ForegroundColor = ConsoleColor.Green;
-            Book.Show(Content);
+            Book.Show(NewContent.TextContent);
             Console.ForegroundColor = ConsoleColor.White;
             System.Console.WriteLine("//////////////////////////////////////////////////////3");
             System.Console.WriteLine("1.SuperMan");
@@ -62,16 +68,37 @@ namespace Test
         public double Perimetr { get { return 2 * (side1 + side2); } }
 
     }
-    class Book
+    class Author
     {
-        public string Author { get; set; }
-        public string Title { get; set; }
-        public string Content { get; set; }
+        public string TextAuthor { get; set; }
         public static void Show(string Text)
         {
             System.Console.WriteLine(Text);
         }
-
+    }
+    class Book
+    {
+        public string TextBook { get; set; }
+        public static void Show(string Text)
+        {
+            System.Console.WriteLine(Text);
+        }
+    }
+    class Title
+    {
+        public string TextTitle { get; set; }
+        public static void Show(string Text)
+        {
+            System.Console.WriteLine(Text);
+        }
+    }
+    class Content
+    {
+        public string TextContent { get; set; }
+        public static void Show(string Text)
+        {
+            System.Console.WriteLine(Text);
+        }
     }
     class Human
     {
